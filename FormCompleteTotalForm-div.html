@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+      .form-input {
+         font: 'sans-serif';
+         font-size: 12px;
+         margin: : 10px;
+      }
+      .inputLabel {
+          font: 'ariel';
+          font-size: 24px;
+          margin: : 10px;
+          align-items: center;
+      }
+      .submitButton {
+          height: 50px;
+          width: 250px;
+          background-image: repeating-linear-gradient(#e66465);
+      }
+      .contactInfo {
+          padding-right: 10px;
+          padding-left: 15px;
+          width: 480px;
+          height: 450px;
+          float: left;
+          align-content: center;
+          background-color: #FF0000;
+          margin-right: 15px;
+      }
+      .companyInfo{
+        padding-right: 10px;
+        padding-left: 5px;
+        width: 480px;
+        height: 450px;
+        float: left;
+        align-items: center;
+        background-color: #FF0000;
+      }
+      #stateDiv {
+          display: none;
+      }
+      .zi-logo {
+          width: 256px;
+          height: 60px;
+          padding-bottom: 10px;
+      }
+      .submitButton {
+          position: relative;
+          top:20px;
+          left: 180px;
+      }
+  </style>
+  <script type="text/javascript">
+    function submitForm(event) {
+        event.preventDefault();
+        console.log('submitted a form...');
+    }
+    function checkIframe() {
+        var form = document.getElementById('AutomationForm');
+        form.addEventListener('submit',submitForm(event));
+        console.log('Checking if window in iframe');
+        if(window.frameElement != null) {
+            document.getElementById('companyStateDiv').style.display = "block";
+            document.getElementById('stateDiv').style.display = "block";
+        }
+    }
+  </script>
+</head>
+<body onload="checkIframe()">
+    <div class="zi-logo">
+      <img class="zi-logo" alt="ziLogo" src="images/zi-logo.png"/>
+    </div>
+    <form novalidate="" aria-atomic="true" _lpchecked="1">
+        <div data-qa="FormHeadline" role="heading" aria-level="2" class="sc-fzXfPN ifFvOu"><span class="sc-fzXfNl coyxtf">RSVP</span></div>
+        <div>
+            <div data-qa="FormNode__Container" class="SuiContainer sc-fzXfPJ LJBsk">
+                <div data-qa="QuestionView" class="SuiContainer SuiContainer--flex-group" style="transition: opacity 125ms ease-in-out 0s; opacity: 1;">
+                    <div class="SuiTextInput SuiTextInput--full-width" data-qa="QuestionNode__text-First Name" data-field-name="First Name"><label id="label-2" for="field-1" class="sc-AykKK bteKsV SuiLabel"><span class="sc-fzXfNl coyxtf">First Name <strong aria-hidden="true" style="color:#DD2C00">*</strong></span></label>
+                        <div id="described-by-3" class="sc-AykKE hyrpUG SuiHelperText"></div>
+                        <div class="sc-AykKF dqSjQx SuiField SuiField--full-width SuiField--has-form-el SuiTextInput-field">
+                            <div class="sc-AykKG iufxPS">
+                                <div class="sc-AykKH kidWrx SuiField__current"><span class="sc-AykKI IxbnG SuiField__placeholder">Enter your first name</span><input id="field-1" aria-labelledby="label-2" aria-describedby="described-by-3" class="SuiTextInput-input" name="4831485" type="text" autocomplete="off" aria-required="true" aria-invalid="false" value=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-qa="FormNode__Container" class="SuiContainer sc-fzXfPJ LJBsk">
+                <div data-qa="QuestionView" class="SuiContainer SuiContainer--flex-group" style="transition: opacity 125ms ease-in-out 0s; opacity: 1;">
+                    <div class="SuiTextInput SuiTextInput--full-width" data-qa="QuestionNode__text-Last Name" data-field-name="Last Name"><label id="label-5" for="field-4" class="sc-AykKK bteKsV SuiLabel"><span class="sc-fzXfNl coyxtf">Last Name <strong aria-hidden="true" style="color:#DD2C00">*</strong></span></label>
+                        <div id="described-by-6" class="sc-AykKE hyrpUG SuiHelperText"></div>
+                        <div class="sc-AykKF dqSjQx SuiField SuiField--full-width SuiField--has-form-el SuiTextInput-field">
+                            <div class="sc-AykKG iufxPS">
+                                <div class="sc-AykKH kidWrx SuiField__current"><span class="sc-AykKI IxbnG SuiField__placeholder">Enter your last name</span><input id="field-4" aria-labelledby="label-5" aria-describedby="described-by-6" class="SuiTextInput-input" name="4831486" type="text" autocomplete="off" aria-required="true" aria-invalid="false" value=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-qa="FormNode__Container" class="SuiContainer sc-fzXfPJ LJBsk">
+                <div data-qa="QuestionView" class="SuiContainer SuiContainer--flex-group" style="transition: opacity 125ms ease-in-out 0s; opacity: 1;">
+                    <div class="SuiTextInput SuiTextInput--full-width" data-qa="QuestionNode__email-Email" data-field-name="Email"><label id="label-8" for="field-7" class="sc-AykKK bteKsV SuiLabel"><span class="sc-fzXfNl coyxtf">Email <strong aria-hidden="true" style="color:#DD2C00">*</strong></span></label>
+                        <div id="described-by-9" class="sc-AykKE hyrpUG SuiHelperText"></div>
+                        <div class="sc-AykKF dqSjQx SuiField SuiField--full-width SuiField--has-form-el SuiTextInput-field">
+                            <div class="sc-AykKG iufxPS">
+                                <div class="sc-AykKH kidWrx SuiField__current"><span class="sc-AykKI IxbnG SuiField__placeholder">you@your.email</span><input id="field-7" aria-labelledby="label-8" aria-describedby="described-by-9" class="SuiTextInput-input" name="4831487" type="email" autocomplete="off" aria-required="true" aria-invalid="false" value=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831488" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831489" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831490" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831491" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831492" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831493" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831495" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831496" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831497" style="display: none;" type="text"></div>
+            <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831498" style="display: none;" type="text"></div>
+        </div>
+        <div class="sc-fzXfQq eafXeE"><button type="submit" class="sc-fzXfRb ezcCSR SuiButton SuiButton--primary SuiButton--wide"><div class="SuiButton-content"><div class="SuiButton-label"><span class="sc-fzXfNl coyxtf">Submit</span></div></div></button></div>
+    </form>
+</body>
+</html>
