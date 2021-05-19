@@ -51,27 +51,12 @@
           left: 180px;
       }
   </style>
-  <script type="text/javascript">
-    function submitForm(event) {
-        event.preventDefault();
-        console.log('submitted a form...');
-    }
-    function checkIframe() {
-        var form = document.getElementById('AutomationForm');
-        form.addEventListener('submit',submitForm(event));
-        console.log('Checking if window in iframe');
-        if(window.frameElement != null) {
-            document.getElementById('companyStateDiv').style.display = "block";
-            document.getElementById('stateDiv').style.display = "block";
-        }
-    }
-  </script>
 </head>
-<body onload="checkIframe()">
+<body>
     <div class="zi-logo">
       <img class="zi-logo" alt="ziLogo" src="images/zi-logo.png"/>
     </div>
-    <form novalidate="" aria-atomic="true" _lpchecked="1">
+    <form novalidate="" aria-atomic="true" _lpchecked="1" id="AutomationForm">
         <div data-qa="FormHeadline" role="heading" aria-level="2" class="sc-fzXfPN ifFvOu"><span class="sc-fzXfNl coyxtf">RSVP</span></div>
         <div class="div-form-class">
             <div data-qa="FormNode__Container" class="SuiContainer sc-fzXfPJ LJBsk">
@@ -121,7 +106,14 @@
             <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831497" style="display: none;" type="text"></div>
             <div data-qa="FormNode__Container" class="SuiContainer"><input name="4831498" style="display: none;" type="text"></div>
         <div class="sc-fzXfQq eafXeE"><button type="submit" class="sc-fzXfRb ezcCSR SuiButton SuiButton--primary SuiButton--wide"><div class="SuiButton-content"><div class="SuiButton-label"><span class="sc-fzXfNl coyxtf">Submit</span></div></div></button></div>
-      </div>
+        <script type="text/javascript">
+            var form = document.querySelector('#AutomationForm');
+            form.addEventListener('submit',function (evt) {
+                evt.preventDefault();
+                console.log('Submitting a form...');
+            })
+        </script>
+        </div>
     </form>
 </body>
 </html>
