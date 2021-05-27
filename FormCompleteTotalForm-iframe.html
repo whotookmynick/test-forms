@@ -1,9 +1,13 @@
 <html>
 <head>
-  <script>
-    function loadIframeContent() {
-      const closeScriptTag = "\<\/script\>"
-      const source = `
+</head>
+<body onload="loadIframeContent()">
+<iframe id="form-frame" style="position: absolute; height: 100%;width:100%; border: none"></iframe>
+
+<script>
+  function loadIframeContent() {
+    const closeScriptTag = "\<\/script\>"
+    const source = `
 <html>
 <head>
   <style type="text/css">
@@ -794,13 +798,10 @@
 </body>
 </html>
   `;
-      const iframe = document.getElementById('form-frame');
-      iframe.srcdoc = source;
-    }
-  </script>
-</head>
-<body onload="loadIframeContent()">
-<iframe id="form-frame" style="position: absolute; height: 100%;width:100%; border: none"></iframe>
+    const iframe = document.getElementById('form-frame');
+    iframe.srcdoc = source;
+  }
+</script>
 
 </body>
 </html>
