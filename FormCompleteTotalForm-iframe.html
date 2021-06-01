@@ -2,7 +2,7 @@
 <head>
 </head>
 <body onload="loadIframeContent()">
-<iframe id="hs-form-iframe" style="position: absolute; height: 100%;width:100%; border: none"></iframe>
+<iframe id="form-frame" style="position: absolute; height: 100%;width:100%; border: none" class="hs-form-iframe"></iframe>
 
 <script>
   function loadIframeContent() {
@@ -798,7 +798,7 @@
 </body>
 </html>
   `;
-    const iframe = document.getElementById('hs-form-iframe');
+    const iframe = document.getElementById('form-frame');
     iframe.srcdoc = source;
   }
 </script>
