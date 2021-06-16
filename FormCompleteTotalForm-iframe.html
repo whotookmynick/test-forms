@@ -799,7 +799,9 @@
 </html>
   `;
     const iframe = document.querySelector('.hs-form-iframe');
-    iframe.srcdoc = source;
+    const doc = iframe.contentDocument;
+    doc.write(source);
+    doc.close();
   }
 </script>
 
