@@ -779,10 +779,12 @@
 
 
         <div class="submitButton">
-            <button class="submitButton" type="button" id="submitBtn" name="submitBtn" value="Submit">Submit</button>
+            <button class="submitButton" type="button" id="submitBtn" name="submitBtn" value="Submit" onclick="submitForm()">Submit</button>
             <script type="text/javascript">
-              console.log('Submitting a form...');
-              window._zi.fcTriggerSubmit();
+              function submitForm() {
+                console.log('Submitting a form...');
+                window._zi.fcTriggerSubmit();
+              }
             </script>
         </div>
     </form>
