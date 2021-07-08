@@ -2,40 +2,76 @@
 <html>
 <head>
   <style type="text/css">
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f6f8fb;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+      select {
+        width: 100%;
+      }
       .form-input {
-         font-family: 'sans-serif';
-         font-size: 12px;
-         margin: 10px;
+        font-family: 'sans-serif';
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        padding: .75rem;
+        display: block;
+        font-size: 1rem;
+        color: #6a5b5b;
+        -webkit-appearance: none;
+        font-weight: 500;
+        outline: none;
+        font-family: sharp sans,Arial,sans-serif;
+        background: #fff;
+        transition: border .2s ease-in-out;
+        margin: 12px 0;
       }
       .inputLabel {
-          font-family: 'ariel';
-          font-size: 24px;
-          margin: 10px;
-          align-items: center;
+        font-size: 16px;
+        margin: 8px;
+        align-items: center;
+        font-family: sans-serif;
+      }
+      .submitButtonDiv {
+        width: 500px;
+        margin: auto;
       }
       .submitButton {
-          height: 50px;
-          width: 250px;
-          background-image: repeating-linear-gradient(#e66465);
+        background: #f44238;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 600;
+        width: 100%;
+        height: 55px;
+        margin: 45px 0;
       }
       .contactInfo {
-          padding-right: 10px;
-          padding-left: 15px;
-          width: 500px;
-          height: 540px;
-          float: left;
-          align-content: center;
-          background-color: #FF0000;
-          margin-right: 15px;
+        padding: 2rem;
+        background: #fff;
+        box-shadow: 10px 10px 34px 0 rgb(0 0 0 / 20%);
+        display: block;
+        position: relative;
+        width: 500px;
+        float: left;
+        margin-right: 70px;
       }
       .companyInfo{
-        padding-right: 10px;
-        padding-left: 5px;
+        padding: 2rem;
+        background: #fff;
+        box-shadow: 10px 10px 34px 0 rgb(0 0 0 / 20%);
+        display: block;
+        position: relative;
         width: 500px;
-        height: 540px;
         float: left;
-        align-items: center;
-        background-color: #FF0000;
       }
       #stateDiv {
           display: none;
@@ -43,12 +79,7 @@
       .zi-logo {
           width: 256px;
           height: 60px;
-          padding-bottom: 10px;
-      }
-      .submitButton {
-          position: relative;
-          top:20px;
-          left: 180px;
+          margin-bottom: 35px;
       }
   </style>
   <script type="text/javascript">
@@ -63,41 +94,41 @@
 </head>
 <body onload="checkIframe()">
     <div class="zi-logo">
-      <img class="zi-logo" alt="ziLogo" src="images/zi-logo.png"/>
+      <img class="zi-logo" alt="ziLogo" src="https://www.zoominfo.com/wp-content/themes/zoominfo/assets/header-footer/images/zoominfo-logo-new.svg"/>
     </div>
     <form id="AutomationForm">
       <div class="contactInfo">
-        <div>
+        <div class="field">
           <label for="email">
             <span class="inputLabel">Business Email</span>
           </label>
           <input id="email" type="email" class="form-input" name="email"/>
         </div>
-        <div>
+        <div class="field">
           <label for="firstname">
             <span class="inputLabel">First Name</span>
           </label>
           <input id="firstname" type="text" class="form-input" name="firstname"/>
         </div>
-        <div>
+        <div class="field">
           <label for="lastname">
             <span class="inputLabel">Last Name</span>
           </label>
           <input id="lastname" type="text" class="form-input" name="lastname"/>
         </div>
-        <div>
+        <div class="field">
           <label for="fullname">
             <span class="inputLabel">Full Name</span>
           </label>
           <input id="fullname" type="text" class="form-input" name="fullname"/>
         </div>
-        <div>
+        <div class="field">
           <label for="middlename">
             <span class="inputLabel">Middle Name</span>
           </label>
           <input id="middlename" type="text" class="form-input" name="middlename"/>
         </div>
-        <div>
+        <div class="field">
           <script type="text/javascript">
               function enableState() {
                   var country = document.getElementById('country');
@@ -368,31 +399,31 @@
               <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Guam">Guam</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
             </select>
           </div>
-          <div>
+          <div class="field">
             <label for="city">
               <span class="inputLabel">City</span>
             </label>
             <input id="city" type="text" class="form-input" name="city"/>
           </div>
-          <div>
+          <div class="field">
             <label for="street">
               <span class="inputLabel">Street</span>
             </label>
             <input id="street" type="text" class="form-input" name="street"/>
           </div>
-          <div>
+          <div class="field">
             <label for="zip">
               <span class="inputLabel">Zip code</span>
             </label>
             <input id="zip" type="text" class="form-input" name="zip"/>
           </div>
-          <div>
+          <div class="field">
             <label for="title">
               <span class="inputLabel">Job Title</span>
             </label>
             <input id="title" type="text" placeholder="ex. Automation engeineer" class="form-input" name="title"/>
           </div>
-          <div>
+          <div class="field">
             <label for="managementlevel">
               <span class="inputLabel">Management level</span>
             </label>
@@ -405,61 +436,61 @@
                 <option value="Non-Manager">Non-Manager</option>
             </select>
           </div>
-          <div>
+          <div class="field">
             <label for="privatephone">
               <span class="inputLabel">Direct Phone Number</span>
             </label>
             <input id="privatephone" type="tel" class="form-input" name="privatephone"/>
           </div>
-          <div>
+          <div class="field">
             <label for="jobfunction">
               <span class="inputLabel">Job Function</span>
             </label>
-            <input id="jobfunction" type="text" placeholder="etc. Executive" name="jobfunction"/>
+            <input id="jobfunction" type="text" placeholder="etc. Executive" class="form-input" name="jobfunction"/>
           </div>
-          <div>
+          <div class="field">
             <label for="depertment">
               <span class="inputLabel">Depertment</span>
             </label>
-            <input id="depertment" type="text" placeholder="etc. Legal" name="depertment"/>
+            <input id="depertment" type="text" placeholder="etc. Legal" class="form-input" name="depertment"/>
           </div>
         </div>
         <div class="companyInfo">
-          <div>
+          <div class="field">
             <label for="companyname">
               <span class="inputLabel">Company</span>
             </label>
-            <input id="companyname" type="text" name="companyname"/>
+            <input id="companyname" class="form-input" type="text" name="companyname"/>
           </div>
-          <div>
+          <div class="field">
             <label for="companyurl">
               <span class="inputLabel">Company Website</span>
             </label>
-            <input id="companyurl" type="text" name="companyurl"/>
+            <input id="companyurl" class="form-input" type="text" name="companyurl"/>
           </div>
-          <div>
+          <div class="field">
             <label for="companylinkedin">
               <span class="inputLabel">Company LinkedIn</span>
             </label>
-            <input id="companylinkedin" type="text" name="companylinkedin"/>
+            <input id="companylinkedin" class="form-input" type="text" name="companylinkedin"/>
           </div>
-          <div>
+          <div class="field">
             <label for="companyphone">
               <span class="inputLabel">Company Phone</span>
             </label>
-            <input id="companyphone" type="tel" name="companyphone"/>
+            <input id="companyphone" class="form-input" type="tel" name="companyphone"/>
           </div>
-          <div>
+          <div class="field">
             <label for="companyrevenue">
               <span class="inputLabel">Company revenue</span>
             </label>
-            <input id="companyrevenue" type="number" name="companyrevenue"/>
+            <input id="companyrevenue" class="form-input" type="number" name="companyrevenue"/>
           </div>
-          <div>
+          <div class="field">
             <label for="companysize">
               <span class="inputLabel">Company employee count</span>
             </label>
-            <select id="companysize" type="number" name="companysize">
+            <select id="companysize" class="form-control form-input" type="number" name="companysize">
               <option value></option>
               <option value="1-499">1-499</option>
               <option value="500-999">500-999</option>
@@ -469,25 +500,25 @@
               <option value="2500+">2500+</option>
             </select>
           </div>
-          <div>
+          <div class="field">
             <label for="naics">
               <span class="inputLabel">Company NAICS code</span>
             </label>
-            <input id="naics" type="number" name="naics"/>
+            <input id="naics" type="number" class="form-input" name="naics"/>
           </div>
-          <div>
+          <div class="field">
             <label for="sic">
               <span class="inputLabel">Company SIC code</span>
             </label>
-            <input id="sic" type="number" name="sic"/>
+            <input id="sic" type="number" class="form-input" name="sic"/>
           </div>
-          <div>
+          <div class="field">
             <label for="pindustry">
               <span class="inputLabel">Primary industry</span>
             </label>
-            <input id="pindustry" name="pindustry" type="text"/>
+            <input id="pindustry" name="pindustry" class="form-input" type="text"/>
           </div>
-          <div>
+          <div class="field">
             <script type="text/javascript">
                 function enableCompanyState() {
                     var country = document.getElementById('companycountry');
@@ -757,19 +788,19 @@
                 <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Guam">Guam</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
               </select>
             </div>
-            <div>
+            <div class="field">
               <label for="companyCity">
                 <span class="inputLabel">Company's City</span>
               </label>
               <input id="companyCity" type="text" class="form-input" name="companyCity"/>
             </div>
-            <div>
+            <div class="field">
               <label for="comapnyStreet">
                 <span class="inputLabel">Company's Street</span>
               </label>
               <input id="comapnyStreet" type="text" class="form-input" name="comapnyStreet"/>
             </div>
-            <div>
+            <div class="field">
               <label for="companyZip">
                 <span class="inputLabel">Company's Zip code</span>
               </label>
@@ -778,7 +809,7 @@
         </div>
 
 
-        <div class="submitButton">
+        <div class="submitButtonDiv">
             <button class="submitButton" type="submit" id="submitBtn" name="submitBtn" value="Submit">Submit</button>
             <script type="text/javascript">
                 var form = document.querySelector('#AutomationForm');
