@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f6f8fb;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+      select {
+        width: 100%;
+      }
+      .form-input {
+        font-family: 'sans-serif';
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        padding: .75rem;
+        display: block;
+        font-size: 1rem;
+        color: #6a5b5b;
+        -webkit-appearance: none;
+        font-weight: 500;
+        outline: none;
+        font-family: sharp sans,Arial,sans-serif;
+        background: #fff;
+        transition: border .2s ease-in-out;
+        margin: 12px 0;
+      }
+      .inputLabel {
+        font-size: 16px;
+        margin: 8px;
+        align-items: center;
+        font-family: sans-serif;
+      }
+      .submitButtonDiv {
+        width: 500px;
+        margin: auto;
+      }
+      .submitButton {
+        background: #f44238;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 600;
+        width: 100%;
+        height: 55px;
+        margin: 45px 0;
+      }
+      .contactInfo {
+        padding: 2rem;
+        background: #fff;
+        box-shadow: 10px 10px 34px 0 rgb(0 0 0 / 20%);
+        display: block;
+        position: relative;
+        width: 500px;
+        float: left;
+        margin-right: 70px;
+      }
+      .companyInfo{
+        padding: 2rem;
+        background: #fff;
+        box-shadow: 10px 10px 34px 0 rgb(0 0 0 / 20%);
+        display: block;
+        position: relative;
+        width: 500px;
+        float: left;
+      }
+      #stateDiv {
+          display: none;
+      }
+      .zi-logo {
+          width: 256px;
+          height: 60px;
+          margin-bottom: 35px;
+      }
+  </style>
+  <script type="text/javascript">
+      function checkIframe() {
+          console.log('Checking if window in iframe');
+          if(window.frameElement != null) {
+              document.getElementById('companyStateDiv').style.display = "block";
+              document.getElementById('stateDiv').style.display = "block";
+          }
+      }
+  </script>
+</head>
+<body onload="checkIframe()">
+    <div class="zi-logo">
+      <img class="zi-logo" alt="ziLogo" src="https://www.zoominfo.com/wp-content/themes/zoominfo/assets/header-footer/images/zoominfo-logo-new.svg"/>
+    </div>
+    <form id="AutomationForm">
+      <input id="email" type="email" class="form-input" name="email" />
+    
+      <input id="firstname" type="text" class="form-input" name="firstname" />
+    
+      <input id="lastname" type="text" class="form-input" name="lastname" />
+    
+      <input id="fullname" type="text" class="form-input" name="fullname" />
+    
+      <input id="middlename" type="text" class="form-input" name="middlename" />
+    
+      <input id="privatephone" type="tel" class="form-input" name="privatephone" />
+    
+      <input id="jobfunction" type="text" placeholder="etc. Executive" class="form-input" name="jobfunction" />
+    
+      <input id="depertment" type="text" placeholder="etc. Legal" class="form-input" name="depertment" />
+
+
+        <div class="submitButtonDiv">
+            <button class="submitButton" type="submit" id="submitBtn" name="submitBtn" value="Submit">Submit</button>
+            <script type="text/javascript">
+                var form = document.querySelector('#AutomationForm');
+                form.addEventListener('submit',function (evt) {
+                    evt.preventDefault();
+                    console.log('Submitting a form...');
+                })
+            </script>
+        </div>
+    </form>
+</body>
+</html>
