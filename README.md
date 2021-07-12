@@ -10,6 +10,7 @@
 [https://whotookmynick.github.io/test-forms/pageWithoutForm.html](https://whotookmynick.github.io/test-forms/pageWithoutForm.html) \
 [https://whotookmynick.github.io/test-forms/blockedInIframe.html](https://whotookmynick.github.io/test-forms/blockedInIframe.html) \
 [https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-noinputs.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-noinputs.html) \
-[https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-slowLoading.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-slowLoading.html) 
+[https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-slowLoading.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-slowLoading.html) \
+[https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-submitHook.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-submitHook.html) 
 
 END
