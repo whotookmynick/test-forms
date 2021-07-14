@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+    if(window.performance) {
+      performance.mark('application_start');
+    }
+  </script>
+<script>
+    const SFNA_PATH = '/sfna';
+    const notInIframe = (window.parent === window);
+    const pathIsSfna = window.location.pathname.startsWith(SFNA_PATH);
+    if (notInIframe && pathIsSfna) {
+      // Redirect to regular DOZI, non-sfna url path
+      window.location.replace(window.location.href.replace(SFNA_PATH, ''));
+    }
+  </script>
+<script type="text/javascript" src="datadog-real-user-monitoring.js"></script>
+<script src="https://apis.google.com/js/platform.js" async="" defer=""></script>
+<meta charset="utf-8">
+<base href="/versions/growui-prs/pr-12366/">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+<meta name="description" content="Check out this data on Zoominfo, the leading sales intelligence platform fir go-to-market teams">
+<meta property="og:url" content="" id="OgProfileURL" />
+<meta property="og:image" content="https://www.pipelinersales.com/wp-content/uploads/2019/09/zoominfo-powered-by-discoverorg-logo-large.png">
+<meta property="og:site_name" content="ZoomInfo" />
+<link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kalam&amp;display=swap" rel="stylesheet">
+
+<script>
+    var cssId = 'icomoon';
+    var suffix = new Date().getTime();
+    if (!document.getElementById(cssId))
+    {
+      var head  = document.getElementsByTagName('head')[0];
+      var link  = document.createElement('link');
+      link.id   = cssId;
+      link.rel  = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'https://d1azc1qln24ryf.cloudfront.net/118246/ZoominfoDesignSystem/style-cf.css?' + suffix;
+      link.media = 'all';
+      head.appendChild(link);
+    }
+  </script>
+<script>  dataLayer = [];</script>
+
+<script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PHWTRTJ');
+  </script>
+
+
+<script type="text/javascript">
+    (function(){
+      window._pxAppId = 'PXosx7m0dx';
+      // Custom parameters
+      // window._pxParam1 = "<param1>";
+      var p = document.getElementsByTagName('script')[0],
+        s = document.createElement('script');
+      s.async = 1;
+      s.src = '/osx7m0dx/init.js';
+      p.parentNode.insertBefore(s,p);
+    }());
+  </script>
+<noscript>
+    <div style="position:fixed; top:0; left:0; display:none" width="1" height="1">
+      <img src="/osx7m0dx/xhr/api/v1/collector/noScript.gif?appId=PXosx7m0dx" alt="PxPixel">
+    </div>
+  </noscript>
+
+<style>
+    #ada-button-frame {
+      display: none;
+    }
+  </style>
+<link rel="stylesheet" href="/versions/growui-prs/pr-12366/styles.423ce14aee140d5620f7.css"></head>
+<body class="theme__dozi">
+
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHWTRTJ"
+          height="0" width="0" style="display:none;visibility:hidden">
+
+  </iframe>
+</noscript>
+
+<div id="internet-explorer-wrapper" class="ie_no_support_page" style="display:none">
+<div class="ie_no_support_page-logo">
+<img class="ie_no_support_page-logo-zi" src="/assets/images/logos/zoomInfoLogo.png">
+</div>
+<p class="ie_no_support_page-browser_support">Oops! Currently we do not support the browser you are using.</p>
+<p class="ie_no_support_page-get_chrome">To get the best ZoomInfo experience, we recommend Google Chrome.</p>
+<a href="https://www.google.com/intl/en/chrome/browser/features.html" class="ie_no_support_page-btn">
+<p class="ie_no_support_page-btn-text">Get Google Chrome</p>
+<img src="/assets/images/broswer_logos/Chrome-logo.png" alt="go-to-chrome">
+</a>
+</div>
+<div id="mobile-wrapper" class="mobile_no_support_page" style="display:none">
+<div class="mobile_no_support_page-wrapper">
+<div class="mobile_no_support_page-logo">
+<img class="mobile_no_support_page-logo-zi" src="/assets/images/zoominfo-logo-without-powered-by.svg">
+</div>
+<img class="mobile_no_support_page-image" src="/assets/images/new-illustrations/Error.svg">
+<p class="mobile_no_support_page-support">Oops! We do not currently support mobile browsers.</p>
+<p class="mobile_no_support_page-support">This capability is coming soon.</p>
+</div>
+</div>
+<div id="liveagent_button_online" style="display: none; height: 0; width: 0; visibility: hidden;">&nbsp;</div>
+<div id="liveagent_button_offline" style="display: none; height: 0; width: 0; visibility: hidden;">&nbsp;</div>
+
+
+<app-root id="app-root"></app-root>
+<script src="//assets.zoominfo.com/amcharts/amcharts.js"></script>
+<script src="//assets.zoominfo.com/amcharts/ammap.js"></script>
+<script src="//assets.zoominfo.com/amcharts/light.js"></script>
+<script src="//assets.zoominfo.com/amcharts/pie.js"></script>
+<script src="//assets.zoominfo.com/amcharts/serial.js"></script>
+<script src="//assets.zoominfo.com/amcharts/usaLow.js"></script>
+<script src="//assets.zoominfo.com/amcharts/usaMercatorLow.js"></script>
+<script src="//assets.zoominfo.com/amcharts/worldLow.js"></script>
+<script src="//assets.zoominfo.com/amcharts/responsive.min.js" type="text/javascript"></script>
+<script id="__ada" data-lazy="" data-handle="zoominfo" src="https://static.ada.support/embed2.js"></script>
+<script type="text/javascript">
+
+  document.getElementById('internet-explorer-wrapper').style.display = 'none';
+  document.getElementById('mobile-wrapper').style.display = 'none';
+
+  // Minified version of isMobile included in the HTML since it's small
+  !function(a){var b=/iPhone/i,c=/iPod/i,d=/iPad/i,e=/(?=.*\bAndroid\b)(?=.*\bMobile\b)/i,f=/Android/i,g=/(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,h=/(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,i=/IEMobile/i,j=/(?=.*\bWindows\b)(?=.*\bARM\b)/i,k=/BlackBerry/i,l=/BB10/i,m=/Opera Mini/i,n=/(CriOS|Chrome)(?=.*\bMobile\b)/i,o=/(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,p=new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)","i"),q=function(a,b){return a.test(b)},r=function(a){var r=a||navigator.userAgent,s=r.split("[FBAN");return"undefined"!=typeof s[1]&&(r=s[0]),s=r.split("Twitter"),"undefined"!=typeof s[1]&&(r=s[0]),this.apple={phone:q(b,r),ipod:q(c,r),tablet:!q(b,r)&&q(d,r),device:q(b,r)||q(c,r)||q(d,r)},this.amazon={phone:q(g,r),tablet:!q(g,r)&&q(h,r),device:q(g,r)||q(h,r)},this.android={phone:q(g,r)||q(e,r),tablet:!q(g,r)&&!q(e,r)&&(q(h,r)||q(f,r)),device:q(g,r)||q(h,r)||q(e,r)||q(f,r)},this.windows={phone:q(i,r),tablet:q(j,r),device:q(i,r)||q(j,r)},this.other={blackberry:q(k,r),blackberry10:q(l,r),opera:q(m,r),firefox:q(o,r),chrome:q(n,r),device:q(k,r)||q(l,r)||q(m,r)||q(o,r)||q(n,r)},this.seven_inch=q(p,r),this.any=this.apple.device||this.android.device||this.windows.device||this.other.device||this.seven_inch,this.phone=this.apple.phone||this.android.phone||this.windows.phone,this.tablet=this.apple.tablet||this.android.tablet||this.windows.tablet,"undefined"==typeof window?this:void 0},s=function(){var a=new r;return a.Class=r,a};"undefined"!=typeof module&&module.exports&&"undefined"==typeof window?module.exports=r:"undefined"!=typeof module&&module.exports&&"undefined"!=typeof window?module.exports=s():"function"==typeof define&&define.amd?define("isMobile",[],a.isMobile=s()):a.isMobile=s()}(this);
+
+  function GetIE() {
+    return !!window.navigator.userAgent.match(/Trident/);
+  }
+
+  if (GetIE()) {
+    document.getElementById('app-root').style.display = 'none';
+    document.getElementById('mobile-wrapper').style.display = 'none';
+    document.getElementById('internet-explorer-wrapper').style.display = 'flex';
+  }
+
+  var pathname = window.location.hostname;
+  var isOnGo = pathname.indexOf('app.zoominfo.com') > -1;
+
+  if (isMobile.any) {
+    document.getElementById('app-root').style.display = 'none';
+    document.getElementById('internet-explorer-wrapper').style.display = 'none';
+    document.getElementById('mobile-wrapper').style.display = 'none';
+  }
+
+</script>
+<script src="/versions/growui-prs/pr-12366/runtime-es2015.aa3eb14be4867db3dd4d.js" type="module"></script><script src="/versions/growui-prs/pr-12366/runtime-es5.aa3eb14be4867db3dd4d.js" nomodule defer></script><script src="/versions/growui-prs/pr-12366/polyfills-es5.5281b5502205055bf2d4.js" nomodule defer></script><script src="/versions/growui-prs/pr-12366/polyfills-es2015.6765b094f6f695651c3c.js" type="module"></script><script src="/versions/growui-prs/pr-12366/scripts.b306dd7ae3694cfd8910.js" defer></script><script src="/versions/growui-prs/pr-12366/main-es2015.4e9de5a11b12a1ff8ce7.js" type="module"></script><script src="/versions/growui-prs/pr-12366/main-es5.4e9de5a11b12a1ff8ce7.js" nomodule defer></script></body>
+</html>
