@@ -1,5 +1,6 @@
 # formcomplete-test-forms
-
+[https://whotookmynick.github.io/test-forms/FormCompleteSmallForm.html](https://whotookmynick.github.io/test-forms/FormCompleteSmallForm.html) \
+[https://whotookmynick.github.io/test-forms/FormCompleteSmallForm2.html](https://whotookmynick.github.io/test-forms/FormCompleteSmallForm2.html) \
 [https://whotookmynick.github.io/test-forms/FormCompleteTotalForm.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm.html) \
 [https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-other.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-other.html) \
 [https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-multi.html](https://whotookmynick.github.io/test-forms/FormCompleteTotalForm-multi.html) \
