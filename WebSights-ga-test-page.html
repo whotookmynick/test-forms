@@ -11,33 +11,32 @@
 
         gtag('config', 'UA-206306898-1');
     </script>
+    <script>
+        window.gaLoadedInterval = setInterval(function () {
+            if (typeof (ga) === 'function') {
+                clearInterval(window.gaLoadedInterval);
+                const urlSearchParams = new URLSearchParams(window.location.search);
+                let { websiteId, urlVisited, ip } = Object.fromEntries(urlSearchParams.entries());
+                const fetchOpts = { method: 'GET' };
+                if (!websiteId) {
+                    websiteId = window.prompt('Please enter the WebSights domain id (found in the snippet)')
+                }
+                // if (!urlVisited) {
+                //     urlVisited = window.prompt('Please enter the url that is being visited')
+                // }
+                if (!ip) {
+                    ip = window.prompt('Please enter an IP of a desired company to visit (optional)')
+                }
+    
+                if (ip) fetchOpts.headers = { 'x-appengine-user-ip': ip };
+                // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
+                // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
+                fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
+            }
+        }, 300)
+        setTimeout(function () { clearInterval(window.gaLoadedInterval); }, 2000)
+    </script>
 </head>
-
-<script>
-    window.gaLoadedInterval = setInterval(function () {
-        if (typeof (ga) === 'function') {
-            clearInterval(window.gaLoadedInterval);
-            const urlSearchParams = new URLSearchParams(window.location.search);
-            let { websiteId, urlVisited, ip } = Object.fromEntries(urlSearchParams.entries());
-            const fetchOpts = { method: 'GET' };
-            if (!websiteId) {
-                websiteId = window.prompt('Please enter the WebSights domain id (found in the snippet)')
-            }
-            // if (!urlVisited) {
-            //     urlVisited = window.prompt('Please enter the url that is being visited')
-            // }
-            if (!ip) {
-                ip = window.prompt('Please enter an IP of a desired company to visit (optional)')
-            }
-
-            if (ip) fetchOpts.headers = { 'x-appengine-user-ip': ip };
-            // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
-            // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
-            fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
-        }
-    }, 300)
-    setTimeout(function () { clearInterval(window.gaLoadedInterval); }, 2000)
-</script>
 
 <body>
 </body>
