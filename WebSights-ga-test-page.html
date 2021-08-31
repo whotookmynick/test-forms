@@ -19,8 +19,8 @@
             }
 
             if (ip) fetchOpts.headers = { 'x-appengine-user-ip': ip };
-            if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
-            fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
+            // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
+            // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
             fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
         }
         loadPage();
