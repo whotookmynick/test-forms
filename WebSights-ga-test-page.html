@@ -2,9 +2,22 @@
 
 <head>
     <title>Team 12 WebSights GA test page</title>
+</head>
 
-    <script>
-        function loadPage() {
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script id="ga-script" async src="https://www.googletagmanager.com/gtag/js?id=UA-206306898-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-206306898-1');
+</script>
+
+<script>
+    window.gaLoadedInterval = setInterval(function () {
+        if (typeof (ga) === 'function') {
+            clearInterval(window.gaLoadedInterval);
             const urlSearchParams = new URLSearchParams(window.location.search);
             let { websiteId, urlVisited, ip } = Object.fromEntries(urlSearchParams.entries());
             const fetchOpts = { method: 'GET' };
@@ -23,21 +36,13 @@
             // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
             fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
         }
-        loadPage();
-    </script>
-</head>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-206306898-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-206306898-1');
+    }, 1000)
 </script>
 
 <body>
 </body>
+
+<script>
+</script>
 
 </html>
