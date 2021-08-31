@@ -3,13 +3,13 @@
 <head>
     <title>Team 12 WebSights GA test page</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-67NZC88G7E"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-206306898-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-67NZC88G7E');
+        gtag('config', 'UA-206306898-1');
     </script>
 </head>
 
@@ -36,7 +36,7 @@
             fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
         }
     }, 300)
-    setTimeout(function () {clearInterval(window.gaLoadedInterval);}, 2000)
+    setTimeout(function () { clearInterval(window.gaLoadedInterval); }, 2000)
 </script>
 
 <body>
