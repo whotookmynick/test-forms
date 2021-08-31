@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Team 12 WebSights GA test page</title>
+</head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-206306898-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-206306898-1');
+</script>
+
+<body onload="loadPage()">
+    <script>
+        function loadPage() {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            let { websiteId, urlVisited, ip } = Object.fromEntries(urlSearchParams.entries());
+            const fetchOpts = { method:'GET' };
+            if (!websiteId) {
+                websiteId = window.prompt('Please enter the WebSights domain id (found in the snippet)')
+            }
+            if (!urlVisited) {
+                urlVisited = window.prompt('Please enter the url that is being visited')
+            }
+            if (!ip) {
+                ip = window.prompt('Please enter an IP of a desired company to visit (optional)')
+            }
+
+            if (ip) fetchOpts.headers = {'x-appengine-user-ip': ip};
+            if (urlVisited) fetchOpts.headers = {'referer': ip};
+            fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
+        }
+    </script>
+</body>
+
+</html>
