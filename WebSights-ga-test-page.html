@@ -32,7 +32,7 @@
                 // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
                 // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
                 fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts)
-                    .then((res) => {
+                    .then(async (res) => {
                         const funcText = await res.text();
                         if (funcText) eval(funcText)
                     });
