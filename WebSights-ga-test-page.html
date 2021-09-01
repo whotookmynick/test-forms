@@ -31,7 +31,11 @@
                 if (ip) fetchOpts.headers = { 'x-appengine-user-ip': ip };
                 // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
                 // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
-                fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts);
+                fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts)
+                    .then((res) => {
+                        const funcText = await res.text();
+                        if (funcText) eval(funcText)
+                    });
             }
         }, 300)
         setTimeout(function () { clearInterval(window.gaLoadedInterval); }, 2000)
