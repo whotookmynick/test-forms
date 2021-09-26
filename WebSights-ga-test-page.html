@@ -16,7 +16,7 @@
             if (typeof (ga) === 'function') {
                 clearInterval(window.gaLoadedInterval);
                 const urlSearchParams = new URLSearchParams(window.location.search);
-                let { websiteId, urlVisited, ip } = Object.fromEntries(urlSearchParams.entries());
+                let { websiteId, urlVisited, ip, testLocal } = Object.fromEntries(urlSearchParams.entries());
                 const fetchOpts = { method: 'GET' };
                 if (!websiteId) {
                     websiteId = window.prompt('Please enter the WebSights domain id (found in the snippet)')
@@ -31,7 +31,7 @@
                 if (ip) fetchOpts.headers = { 'x-appengine-user-ip': ip };
                 // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
                 // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
-                fetch(`https://ws-staging.zoominfo.com/pixel/${websiteId}`, fetchOpts)
+                fetch(`${testLocal? 'http://localhost:3000' : 'https://ws-staging.zoominfo.com'}/pixel/${websiteId}`, fetchOpts)
                     .then(async (res) => {
                         const funcText = await res.text();
                         if (funcText) eval(funcText)
