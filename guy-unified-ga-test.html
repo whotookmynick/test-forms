@@ -36,68 +36,68 @@
                         const funcText = await res.text();
                         if (funcText) eval(`
                         (function () {
-                          const ga = window[window['GoogleAnalyticsObject'] || 'ga'];
-                          const isGAUA = ga && typeof ga == 'function';
-                          const isGA4 = gtag && typeof gtag == 'function' && dataLayer && dataLayer.some((field) => field.length && field[0] === 'config' && field[1].indexOf('G-') === 0);
-                          const props = {};
-                          const company = { "companyId": "11452565", "revenue": 15493000000, "name": "DISH", "url": "www.dish.com", "ipAddresses": [] };
-                          const mapping = [{ "_id": "612e6f439413710013fe5f06", "gaField": "dimension1", "zoomField": "id" }, { "_id": "612e83a4d19f390016243e0e", "gaField": "dimension2", "zoomField": "revenue" }, { "_id": "612fc9d04165300015a5bad2", "gaField": "dimension5", "zoomField": "name" }, { "_id": "61540a2e4033ae0015975b82", "gaField": "dimension4", "zoomField": "domain" }];
-                          const fieldsMapping = { "id": "companyId", "name": "name", "domain": "url", "type": "type", "revenue": "revenue", "revenueRange": "revRange", "headcount": "headcount", "headcountRange": "empRange", "primaryIndustry": "doziPrimaryIndustry", "industries": "doziIndustries", "businessModel": "businessModel", "city": "headquarters.address.city", "country": "headquarters.address.country", "state": "headquarters.address.state", "zip": "headquarters.address.zip" };
-                          const typeMapping = { "id": "string", "name": "string", "domain": "string", "type": "string", "revenue": "number", "revenueRange": "string", "headcount": "number", "headcountRange": "string", "primaryIndustry": "string", "industries": "array", "businessModel": "string", "city": "string", "country": "string", "state": "string", "zip": "string" };
-                          for (let i = 0; i < mapping.length; i++) {
-                              let item = mapping[i];
-                              let gaField = item.gaField;
-                              let zoomField = fieldsMapping[item.zoomField];
-                              let type = typeMapping[item.zoomField];
+                            const ga = window[window['GoogleAnalyticsObject'] || 'ga'];
+                            const isGAUA = ga && typeof ga == 'function';
+                            const isGA4 = gtag && typeof gtag == 'function' && dataLayer && dataLayer.some((field) => field.length && field[0] === 'config' && field[1].indexOf('G-') === 0);
+                            const props = {};
+                            const company = { "companyId": "11452565", "revenue": 15493000000, "name": "DISH", "url": "www.dish.com", "ipAddresses": [] };
+                            const mapping = [{ "_id": "612e6f439413710013fe5f06", "gaField": "dimension1", "zoomField": "id" }, { "_id": "612e83a4d19f390016243e0e", "gaField": "dimension2", "zoomField": "revenue" }, { "_id": "612fc9d04165300015a5bad2", "gaField": "dimension5", "zoomField": "name" }, { "_id": "61540a2e4033ae0015975b82", "gaField": "dimension4", "zoomField": "domain" }];
+                            const fieldsMapping = { "id": "companyId", "name": "name", "domain": "url", "type": "type", "revenue": "revenue", "revenueRange": "revRange", "headcount": "headcount", "headcountRange": "empRange", "primaryIndustry": "doziPrimaryIndustry", "industries": "doziIndustries", "businessModel": "businessModel", "city": "headquarters.address.city", "country": "headquarters.address.country", "state": "headquarters.address.state", "zip": "headquarters.address.zip" };
+                            const typeMapping = { "id": "string", "name": "string", "domain": "string", "type": "string", "revenue": "number", "revenueRange": "string", "headcount": "number", "headcountRange": "string", "primaryIndustry": "string", "industries": "array", "businessModel": "string", "city": "string", "country": "string", "state": "string", "zip": "string" };
+                            for (let i = 0; i < mapping.length; i++) {
+                                let item = mapping[i];
+                                let gaField = item.gaField;
+                                let zoomField = fieldsMapping[item.zoomField];
+                                let type = typeMapping[item.zoomField];
 
-                              switch (type) {
-                                  case 'string':
-                                      let newValue = get(company, zoomField, false);
-                                      if (newValue) {
-                                          gauaAction('set', [gaField, newValue]);
-                                          props[gaField] = newValue;
-                                      }
-                                      break;
-                                  case 'number':
-                                      if (company.hasOwnProperty(zoomField)) {
-                                          gauaAction('set', [gaField, company[zoomField]]);
-                                          props[gaField] = company[zoomField];
-                                      }
-                                      break;
-                                  case 'array':
-                                      if (company.hasOwnProperty(zoomField)) {
-                                          gauaAction('set', [gaField, company[zoomField].join(',')]);
-                                          props[gaField] = company[zoomField].join(',');
-                                      }
-                                      break;
-                                  default:
-                              }
-                          }
+                                switch (type) {
+                                    case 'string':
+                                        let newValue = get(company, zoomField, false);
+                                        if (newValue) {
+                                            gauaAction('set', [gaField, newValue]);
+                                            props[gaField] = newValue;
+                                        }
+                                        break;
+                                    case 'number':
+                                        if (company.hasOwnProperty(zoomField)) {
+                                            gauaAction('set', [gaField, company[zoomField]]);
+                                            props[gaField] = company[zoomField];
+                                        }
+                                        break;
+                                    case 'array':
+                                        if (company.hasOwnProperty(zoomField)) {
+                                            gauaAction('set', [gaField, company[zoomField].join(',')]);
+                                            props[gaField] = company[zoomField].join(',');
+                                        }
+                                        break;
+                                    default:
+                                }
+                            }
 
-                          if(isGAUA) gauaAction('send', ['event', 'Zoominfo', 'Websights', 'Enriched', {nonInteraction: true}]);
-                          else if(isGA4) gtag('event', 'Zoominfo-Websights-Enriched', props);
+                            if(isGAUA) gauaAction('send', ['event', 'Zoominfo', 'Websights', 'Enriched', {nonInteraction: true}]);
+                            else if(isGA4) gtag('event', 'Zoominfo-Websights-Enriched', props);
 
-                          function get(obj, path, defaultValue) {
-                              const result = String.prototype.split.call(path, /[,[\].]+?/)
-                                  .filter(Boolean)
-                                  .reduce((res, key) => (res !== null && res !== undefined) ? res[key] : res, obj);
-                              return (result === undefined || result === obj) ? defaultValue : result;
-                          };
+                            function get(obj, path, defaultValue) {
+                                const result = String.prototype.split.call(path, /[,[\].]+?/)
+                                    .filter(Boolean)
+                                    .reduce((res, key) => (res !== null && res !== undefined) ? res[key] : res, obj);
+                                return (result === undefined || result === obj) ? defaultValue : result;
+                            };
 
-                          function gauaAction(action, args = []) {
-                              if (isGAUA && ['set', 'send'].includes(action) && args.length) {
-                                  console.log('passed if statement')
-                                  ga_trackers=[];
-                                  ga.getAll().forEach(function(x,i){ga_trackers.push(x.get('name'))});
-                                  ga_trackers.forEach(
-                                      function(gaName){
-                                          ga(gaName + '.' + action, ...args);
-                                  });
-                              }
-                          };
+                            function gauaAction(action, args = []) {
+                                if (isGAUA && ['set', 'send'].includes(action) && args.length) {
+                                    console.log('passed if statement')
+                                    ga_trackers=[];
+                                    ga.getAll().forEach(function(x,i){ga_trackers.push(x.get('name'))});
+                                    ga_trackers.forEach(
+                                        function(gaName){
+                                            ga(gaName + '.' + action, ...args);
+                                    });
+                                }
+                            };
 
-                      })();`
-                     )
+                        })();
+                        `)
                     });
             }
         }, 300)
