@@ -13,7 +13,7 @@
     </script>
     <script>
         window.gaLoadedInterval = setInterval(function () {
-            if (typeof (ga) === 'function') {
+            if (typeof gtag === 'function') {
                 clearInterval(window.gaLoadedInterval);
                 const urlSearchParams = new URLSearchParams(window.location.search);
                 let { websiteId, urlVisited, ip, testLocal } = Object.fromEntries(urlSearchParams.entries());
