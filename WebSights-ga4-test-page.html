@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Team 12 WebSights GA test page</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DW3H184CT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2DW3H184CT');
+    </script>
+    <script>
+        window.gaLoadedInterval = setInterval(function () {
+            if (typeof (ga) === 'function') {
+                clearInterval(window.gaLoadedInterval);
+                const urlSearchParams = new URLSearchParams(window.location.search);
+                let { websiteId, urlVisited, ip, testLocal } = Object.fromEntries(urlSearchParams.entries());
+                const fetchOpts = { method: 'GET' };
+                if (!websiteId) {
+                    websiteId = window.prompt('Please enter the WebSights domain id (found in the snippet)')
+                }
+                // if (!urlVisited) {
+                //     urlVisited = window.prompt('Please enter the url that is being visited')
+                // }
+                if (!ip) {
+                    ip = window.prompt('Please enter an IP of a desired company to visit (optional)')
+                }
+    
+                if (ip) fetchOpts.headers = { 'x-appengine-user-ip': ip };
+                // if (urlVisited) fetchOpts.headers = { 'referer': urlVisited };
+                // fetchOpts.headers = { 'origin': 'http://www.zoominfo.com/' };
+                fetch(`${testLocal? 'http://localhost:3000' : 'https://ws-staging.zoominfo.com'}/pixel/${websiteId}`, fetchOpts)
+                    .then(async (res) => {
+                        const funcText = await res.text();
+                        if (funcText) eval(funcText)
+                    });
+            }
+        }, 300)
+        setTimeout(function () { clearInterval(window.gaLoadedInterval); }, 2000)
+    </script>
+</head>
+
+<body>
+</body>
+
+<script>
+</script>
+
+</html>
