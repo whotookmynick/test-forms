@@ -34,13 +34,17 @@
                 let wsUrl;
                 switch (env) {
                     case "dev":
-                        wsUrl = 'http://localhost:3000'
+                        wsUrl = 'http://localhost:3000';
+                        break;
                     case "stg":
-                        wsUrl = 'https://ws-staging.zoominfo.com'
+                        wsUrl = 'https://ws-staging.zoominfo.com';
+                        break;
                     case "prd":
-                        wsUrl = 'https://ws.zoominfo.com'
+                        wsUrl = 'https://ws.zoominfo.com';
+                        break;
                     default:
-                        wsUrl = 'https://ws-staging.zoominfo.com'
+                        wsUrl = 'https://ws-staging.zoominfo.com';
+                        break;
                 }
                 fetch(`${wsUrl}/pixel/${websiteId}`, fetchOpts)
                     .then(async (res) => {
