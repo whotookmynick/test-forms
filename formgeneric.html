@@ -105,6 +105,7 @@
     <script>
         const urlSearchParams = new URLSearchParams(window.location.search);
         let { formId,env } = Object.fromEntries(urlSearchParams.entries());
+        if (!formId) { alert('formId param is missing in the URL, please add to continue testing.'); }
         switch (env) {
             case "stg":
                 wsUrl = 'https://ws-assets-staging.zoominfo.com';
