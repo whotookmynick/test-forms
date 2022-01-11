@@ -103,29 +103,29 @@
         }
     </script>
     <script>
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        let { formId,env } = Object.fromEntries(urlSearchParams.entries());
-        if (!formId) { alert('formId param is missing in the URL, please add to continue testing.'); }
-        switch (env) {
-            case "stg":
-                wsUrl = 'https://ws-assets-staging.zoominfo.com';
-                break;
-            case "prd":
-                wsUrl = 'https://ws-assets.zoominfo.com';
-                break;
-            default:
-                wsUrl = 'https://ws-assets-staging.zoominfo.com';
-                break;
-        }
-        (function () {
-            window._zi = {formId: `${formId}`, formLoadTimeout: 4000 };
+//         const urlSearchParams = new URLSearchParams(window.location.search);
+//         let { formId,env } = Object.fromEntries(urlSearchParams.entries());
+//         if (!formId) { alert('formId param is missing in the URL, please add to continue testing.'); }
+//         switch (env) {
+//             case "stg":
+//                 wsUrl = 'https://ws-assets-staging.zoominfo.com';
+//                 break;
+//             case "prd":
+//                 wsUrl = 'https://ws-assets.zoominfo.com';
+//                 break;
+//             default:
+//                 wsUrl = 'https://ws-assets-staging.zoominfo.com';
+//                 break;
+//         }
+        (function() {
+            window._zi = {formId: '75ab8494-86ad-4c97-b4d9-6a6baf4c8f33', formLoadTimeout:4000};
             var zi = document.createElement('script');
             zi.type = 'text/javascript';
             zi.async = true;
-            zi.src = `${wsUrl}/formcomplete.js`;
+            zi.src = 'https://ws-assets.zoominfo.com/formcomplete.js';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(zi, s);
-        })();
+            })();
     </script>
 
 </head>
