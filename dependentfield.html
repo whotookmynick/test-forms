@@ -395,6 +395,7 @@
                         var selectList = document.createElement("select");
                         selectList.id = "state";
                         selectList.className="form-control form-input"
+                        selectList.name= "state"
                         myParent.appendChild(selectList);
                         var list = stateLists[el.value]
                         for (key in list) {
