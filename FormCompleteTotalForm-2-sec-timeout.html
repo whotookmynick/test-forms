@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <noscript>
+      <img src="//ip2org.com/pixel/h9A0yt1d2PcMuw4Z4ZZd" width="1" height="1" style="display: none;" />
+    </noscript> -->
+</head>
+<body>
+
+<h1>dozi-formcomplete-client</h1>
+
+<form id="sign_up_form">
+    <input type="email" name="email" id="email" placeholder="Business Email">
+    <input type="text" name="company" id="company" placeholder="Company">
+    <input type="text" name="firstname" id="firstname" placeholder="First Name">
+    <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+    <input type="text" name="title" id="title" placeholder="Job Title">
+    <input type="phone" name="phone" id="phone" placeholder="Direct Phone">
+    <button type="submit" id="Homepage_Sign_Up_Now">Start Free Trial</button>
+</form>
+
+<script>
+    document.querySelector('#sign_up_form').id = 'suf';
+    // document.querySelector('#sign_up_form').style.display = 'none'
+    setTimeout(() => document.querySelector('#sign_up_form').id = 'sign_up_form', 3000);
+
+    (function () {
+        window._zi = {
+            forms: [{formId: '239d346e-b804-49b0-a621-95abf5bb5ebe', callbacks: { onReady: (data) => console.log('OnReady!', data) }}],
+            formLoadTimeout: 1000,
+            development: false,
+            noEmailVerify: true,
+            noFocus: true,
+            cacheToHiddenElement: true
+        };
+        var zi = document.createElement('script');
+        zi.type = 'text/javascript';
+        zi.async = true;
+        zi.src = 'http:localhost:3100/formcomplete.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(zi, s);
+    })();
+
+    // setTimeout(() => document.querySelector('#sign_up_form').style.display = 'block', 3000);
+    // setTimeout(() => document.querySelector('[name=mel]').name = 'email', 3000);
+    // setTimeout(() => {
+    //   const el = document.createElement('input');
+    //   el.name = 'email';
+    //   el.id = 'email';
+    //   el.type = 'email';
+    //   el.placeholder = 'Business Email';
+    //
+    //   const firstEl = document.querySelector('#company');
+    //   firstEl.parentNode.insertBefore(el, firstEl);
+    //
+    //   document.querySelector('[name=mel]').name = 'email'
+    // }, 3000)
+</script>
+
+</body>
+</html>
