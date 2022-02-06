@@ -24,7 +24,8 @@
 <script>
     document.querySelector('#sign_up_form').id = 'suf';
     // document.querySelector('#sign_up_form').style.display = 'none'
-    setTimeout(() => document.querySelector('#suf').id = 'sign_up_form', 3000);
+    const timeout = +prompt('type timeout');
+    setTimeout(() => document.querySelector('#suf').id = 'sign_up_form', timeout);
 
     (function () {
         window._zi = {
