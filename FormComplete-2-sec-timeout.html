@@ -25,7 +25,10 @@
     document.querySelector('#sign_up_form').id = 'suf';
     // document.querySelector('#sign_up_form').style.display = 'none'
     const timeout = +prompt('type timeout');
-    setTimeout(() => document.querySelector('#suf').id = 'sign_up_form', timeout);
+    setTimeout(() => {
+        document.querySelector('#suf').id = 'sign_up_form';
+        console.log('end of timeout for form id')
+    }, timeout);
 
     (function () {
         window._zi = {
