@@ -183,7 +183,7 @@
                     wsUrl = 'https://ws-staging.zoominfo.com';
                     break;
             }
-            const src = `${wsUrl}/personalization/612ddebf9c87e1001333c18b?wspcallback=userPersonalCallback`;
+            const src = `${wsUrl}/personalization/612ddebf9c87e1001333c18b?wspcallback=wspCallbackFn`;
             if (ip) {                
                 const fetchOpts = { method: 'GET' };
                 fetchOpts.headers = { 'x-appengine-user-ip': ip };
