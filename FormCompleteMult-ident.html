@@ -67,6 +67,17 @@
       margin-bottom: 35px;
     }
   </style>
+  <script>
+   
+    var form = document.querySelectorAll('#AutomationForm');
+    form.forEach(f => {
+      f.addEventListener('submit',function (evt) {
+        evt.preventDefault();
+        console.log('Submitting a form...');
+      });
+    });
+
+    </script>
 </head>
 <body>
 <div class="zi-logo">
